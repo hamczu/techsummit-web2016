@@ -1,0 +1,1106 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Web 2016</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					How it feels to develop
+					<h1>simple web project</h1>
+					in 2016
+				</section>
+
+        <section>
+  				<section>
+  					<h1>Why web?</h1>
+            <ul>
+              <li>3.5 billion users</li>
+              <li>multi platform support</li>
+              <li>Google, Youtube, Facebook - started from web</li>
+              <li>community</li>
+            </ul>
+  				</section>
+        </section>
+
+        <section>
+  				<section>
+  					<h1>JavaScript</h1>
+  					<img src="/img/js.png" />
+  				</section>
+
+          <section>
+            <h3>The past</h3>
+            <ul>
+              <li>April 1995 - Brendan Eich in 10 days</li>
+              <li>May 1995 - released as Mocha</li>
+              <li>September 1995 - renamed to LiveScript</li>
+              <li>September 1995 - renamed to JavaScript (by marketing)</li>
+              <li>1996 - Microsoft releases JScript (IE3)</li>
+              <li>1997 - first standard ECMAScript</li>
+              <li>2000 - ES3 (regex, try/catch, etc.)</li>
+              <li>2000 - JSON</li>
+              <li>2009 - ES5 (strict mode, json)</li>
+              <li>2009 - Node.js</li>
+            </ul>
+
+            <aside class="notes">
+              He started work at Netscape Communications Corporation in April 1995. Having originally joined intending to put Scheme "in the browser",[6] Eich was instead commissioned to create a new language that resembled Java, JavaScript for the Netscape Navigator Web browser. The first version was completed in ten days in order to accommodate the Navigator 2.0 Beta release schedule,[6][7] and was called Mocha, but renamed LiveScript in September 1995 and later JavaScript in the same month.
+      
+              THE PAST
+
+              Ecmascript
+              June 1997 First edition
+
+              JavaScript vs EcmaScript
+              JavaScript was originally named Mocha and changed to Livescript but ultimately became JavaScript.
+
+              It's important to note that JavaScript came before ECMAscript and the history will tell you why.
+
+              To start from the beginning, JavaScript derived its name from Java and initially Brendan Eich (the creator of JS) was asked to develop a language that resembled Java for the web for Netscape.
+
+              Eich, however decided that Java was too complicated with all its rules and so set out to create a simpler language that even a beginner could code in. This is evident in such things like the relaxing of the need to have a semicolon.
+
+              After the language was complete, the marketing team of Netscape requested Sun to allow them to name it JavaScript as a marketing stunt and hence why most people who have never used JavaScript think it's related to Java.
+            </aside>
+          </section>
+
+          <section>
+            <h3>JS - The bad parts</h3>
+            <p><span class="fragment">[] + [] -> </span> <span class="fragment">""</span></p>
+            <p><span class="fragment">[] + {} -> </span> <span class="fragment">"[object Object]"</span></p>
+            <p><span class="fragment">{} + [] -> </span> <span class="fragment">0</span></p>
+            <p><span class="fragment">typeof NaN -></span> <span class="fragment">number</span></p>
+          </section>
+
+          <section>
+            <h3>WAT</h1>
+            <img src="/img/duck.jpg" />
+            <p>WAT</p>
+          </section>
+
+  				<section>
+  				  <h3>The present</h3>
+            <h5>ES6 = ECMAScript 2015</h5>
+            <ul>
+              <li>classes and modules</li>
+              <li>for/of loops</li>
+              <li>generators</li>
+              <li>arrow functions</li>
+              <li>binary data, typed arrays</li>
+              <li>collections (maps, sets and weak maps)</li>
+              <li>many others...</li>
+            </ul>
+            <p class="fragment">Stable Chrome (55) - 97%</p>
+  				</section>
+
+          <section>
+          <h3>npm modules > 350k</h3>
+            <img src="/img/npm.png" />
+          </section>
+
+  				<section>
+  				  <h3>The Future</h3>
+            <ul>
+              <li>ES7 = ECMAScript 2016
+                <ul>
+                  <li>Array.prototype.includes</li>
+                  <li>exponentiation operator **
+                </ul>
+              </li>
+              <li>New release cycle (every year)</li>
+              <li>ES.Next</li>
+              <li>Atwood's Law</li>
+              <li>More npm modules</li>
+            </ul>
+            <aside class="notes">
+              everything that can be written in JavaScript will be
+
+              Problem: ECMAScript 2015 (ES6) was too large a release
+  The most recent release of ECMAScript, ES6, is large and was standardized almost 6 years after ES5 (December 2009 vs. June 2015). There are two main problems with so much time passing between releases:
+  Features that are ready sooner than the release have to wait until the release is finished.
+  Features that take long are under pressure to be wrapped up, because postponing them until the next release would mean a long wait. Such features may also delay a release.
+  Therefore, starting with ECMAScript 2016 (ES7), releases will happen more frequently and be much smaller as a consequence. There will be one release per year and it will contain all features that are finished by a yearly deadline.
+            </aside>
+  				</section>
+        </section>
+
+        <section>
+  				<section>
+  					<h1>MVP - simple counter</h1>
+            <p>Just make it work...</p>
+  				</section>
+
+  				<section>
+  					<h3>index.html</h3>
+  			    <pre><code data-trim data-noescape>
+  &lt;!doctype html&gt;
+  &lt;html&gt;
+    &lt;head&gt;
+      &lt;meta charset=&quot;UTF-8&quot; /&gt;
+      &lt;title&gt;Our first JS app&lt;/title&gt;
+      &lt;script src=&quot;./main.js&quot;&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;div id=&quot;counter&quot;&gt;&lt;/div&gt;
+      &lt;button id=&quot;button&quot;&gt;click me&lt;/button&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;
+  			    </code></pre>
+  				</section>
+
+  				<section>
+  					<h3>main.js</h3>
+  			    <pre><code data-trim data-noescape>
+  window.onload = function(){
+    var count = 0
+    document.getElementById('button').addEventListener('click', function(){
+      document.getElementById('counter').textContent = count++
+    })
+  }
+  			    </code></pre>
+  				</section>
+
+  				<section data-background-color="#fff">
+  					<iframe data-src="/versions/0-simple/0-start"></iframe>
+
+  					<aside class="notes">
+  						job well done - we can go home! man, on Android that would take a week
+  					</aside>
+          </section>
+				</section>
+
+        <section>
+  				<section>
+  					<h2>Version 0.1</h2>
+  					<p>two counters</p>
+  				</section>
+
+  				<section>
+  					<h3>index.html</h3>
+  			    <pre><code data-trim data-noescape>
+  &lt;body&gt;
+    &lt;h3 id=&quot;counter&quot;&gt;&lt;/h3&gt;
+    &lt;button id=&quot;button&quot;&gt;click me&lt;/button&gt;
+    &lt;h3 id=&quot;counter2&quot;&gt;&lt;/h3&gt;
+    &lt;button id=&quot;button2&quot;&gt;click me 2&lt;/button&gt;
+  &lt;/body&gt;
+  			    </code></pre>
+  				</section>
+
+  				<section>
+  					<h3>main.js</h3>
+  			    <pre><code data-trim data-noescape>
+  window.onload = function(){
+    var count = 0
+    var count2 = 0
+    document.getElementById('button').addEventListener('click', function(){
+      document.getElementById('counter').textContent = count++
+    })
+    document.getElementById('button2').addEventListener('click', function(){
+      document.getElementById('counter2').textContent = count2++
+    })
+  }
+  			    </code></pre>
+  				</section>
+
+  				<section data-background-color="#fff">
+  					<iframe data-src="/versions/0-simple/1-two"></iframe>
+  				</section>
+        </section>
+
+<!--########################## 0.2 ##########################-->
+        <section>
+          <section>
+            <h2>Version 0.2</h2>
+            <p>refactoring</p>
+          </section>
+
+          <section>
+            <h3>index.html</h3>
+            <pre><code data-trim data-noescape>
+&lt;body&gt;
+  &lt;div id=&quot;counter&quot;&gt;
+    &lt;button&gt;click me&lt;/button&gt;
+    &lt;h3&gt;0&lt;/h3&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;counter2&quot;&gt;
+    &lt;button&gt;click me&lt;/button&gt;
+    &lt;h3&gt;0&lt;/h3&gt;
+  &lt;/div&gt;
+  &lt;script src=&quot;./counter.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;./main.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>counter.js</h3>
+            <pre><code data-trim data-noescape>
+function Counter(el){
+  var count = 0
+  el.querySelector('button').addEventListener('click', function(){
+    el.querySelector('h3').textContent = count++
+  })
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>main.js</h3>
+            <pre><code data-trim data-noescape>
+window.onload = function(){
+  new Counter(document.getElementById('counter'))
+  new Counter(document.getElementById('counter2'))
+}
+            </code></pre>
+          </section>
+
+          <section data-background-color="#fff">
+            <iframe data-src="/versions/0-simple/2-separation"></iframe>
+          </section>
+        </section>
+
+<!--########################## 1.0 ##########################-->
+<section>
+  <section>
+    <h2>Version 1.0</h2>
+    <p>build system</p>
+  </section>
+
+  <section>
+    <h3>Webpack</h3>
+    <img src="/img/webpack.png" />
+  </section>
+
+  <section>
+    <p>brew install node</p>
+    <p>npm init</p>
+    <p>npm install --save webpack</p>
+  </section>
+
+  <section>
+    <h3>Project structure</h3>
+    <img src="/img/dirs.png" />
+  </section>
+
+  <section>
+    <h3>webpack.config.js</h3>
+    <pre><code data-trim data-noescape>
+var webpack = require('webpack');
+var path = require('path');
+
+var BUILD_DIR = path.resolve(__dirname, 'client/dist');
+var APP_DIR = path.resolve(__dirname, 'client/src');
+
+var config = {
+  entry: APP_DIR + '/index.js',
+  output: {
+    path: BUILD_DIR,
+    filename: 'bundle.js'
+  }
+};
+
+module.exports = config;
+    </code></pre>
+  </section>
+
+  <section>
+    <h3>counter.js</h3>
+    <pre><code data-trim data-noescape>
+module.exports = function Counter(el){
+  var count = 0
+  el.querySelector('button').addEventListener('click', function(){
+    el.querySelector('h3').textContent = count++
+  })
+}
+    </code></pre>
+  </section>
+
+  <section>
+    <h3>index.js</h3>
+    <pre><code data-trim data-noescape>
+var Counter = require('./counter')
+
+window.onload = function(){
+  new Counter(document.getElementById('counter'))
+  new Counter(document.getElementById('counter2'))
+}
+    </code></pre>
+  </section>
+
+  <section>
+    <h3>index.html</h3>
+    <pre><code data-trim data-noescape>
+&lt;script src=&quot;dist/bundle.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+    </code></pre>
+  </section>
+
+  <section data-background-color="#fff">
+    <iframe data-src="/versions/1-build/0-webpack/client"></iframe>
+  </section>
+</section>
+
+<!--########################## 1.1 ##########################-->
+<section>
+<!-- todo: think of classes or other better justification for babel -->
+<!-- i.e. older browser support  -->
+  <section>
+    <h2>Version 1.1</h2>
+    <p>babel</p>
+  </section>
+
+  <section>
+    <p>npm install<br />
+    babel-core <br />
+    babel-loader <br />
+    babel-preset-es2015</p>
+  </section>
+
+  <section>
+    <h2>Babel</h2>
+    <p>"Use next generation JavaScript, today."</p>
+    <pre><code data-trim data-noescape>
+[1,2,3].map(n => n + 1);
+    </code></pre>
+
+    <p>compiles into:</p>
+    <pre><code data-trim data-noescape>
+[1,2,3].map(function(n) {
+  return n + 1;
+});
+    </code></pre>
+  </section>
+
+
+  <section>
+    <h3>.babelrc</h3>
+    <pre><code data-trim data-noescape>
+{
+  "presets" : ["es2015"]
+}
+    </code></pre>
+  </section>
+
+  <section>
+    <h3>webpack.config.js</h3>
+    <pre><code data-trim data-noescape>
+var config = {
+  // Existing Code ....
+  module : {
+    loaders : [
+      {
+        test : /\.js/,
+        include : APP_DIR,
+        loader : 'babel'
+      }
+    ]
+  }
+}
+    </code></pre>
+  </section>
+
+  <section>
+    <h3>counter.js</h3>
+    <pre><code data-trim data-noescape>
+export default function Counter(el){
+  let count = 0
+  el.querySelector('button').addEventListener('click', () => {
+    el.querySelector('span').textContent = count++
+  })
+}
+    </code></pre>
+  </section>
+
+  <section>
+    <h3>index.js</h3>
+    <pre><code data-trim data-noescape>
+import Counter from './Counter'
+
+window.onload = () => {
+  new Counter(document.getElementById('counter'))
+  new Counter(document.getElementById('counter2'))
+}
+    </code></pre>
+  </section>
+
+  <section data-background-color="#fff">
+    <iframe data-src="/versions/1-build/1-babel/client"></iframe>
+  </section>
+</section>
+
+<!--########################## 2.0 ##########################-->
+<section>
+  <section>
+    <h2>Version 2.0</h2>
+    <p>more counters!</p>
+
+    <aside class="notes">
+      unfortunately, your company succeeded
+    </aside>
+  </section>
+
+  <section>
+    <img src="/img/counters.jpg" />
+  </section>
+
+	<section>
+    <h3>options:</h3>
+    <ul>
+      <li>create entire DOM by hand</li>
+      <li>jQuery</li>
+      <li>template system</li>
+      <li>JS framework/npm package</li>
+      <li><strong>React</strong></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>React</h2>
+    <img src="/img/react.png" />
+  </section>
+
+  <section>
+    <h2>Why React?</h2>
+    <ul>
+      <li>React isn't an MVC framework</li>
+      <li>React doesn't use templates</li>
+      <li>Dead simple data flow</li>
+      <li>Fast</li>
+      <li>Developed and maintained by FB</li>
+      <li>Community</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>JSX</h2>
+    <pre><code data-trim data-noescape>
+&lt;div className=&quot;sidebar&quot; /&gt;
+    </code></pre>
+
+    <p>compiles into:</p>
+    <pre><code data-trim data-noescape>
+React.createElement(
+  'div',
+  { className: 'sidebar'}, 
+  null
+)
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>Virtual DOM</h2>
+    <pre><code data-trim data-noescape>
+// render 1
+&lt;div className=&quot;sidebar&quot;&gt;test&lt;/div&gt;
+
+// render 2
+&lt;div&gt;some other string&lt;/div&gt;
+    </code></pre>
+
+    <p>compiles into:</p>
+    <pre><code data-trim data-noescape>
+div.textContent = 'some other string'
+div.className = "";
+    </code></pre>
+  </section>
+
+  <section>
+    <p>npm install<br/>
+      react<br/>
+      react-dom<br/>
+      babel-preset-react</p>
+  </section>
+          
+  <section>
+    <h3>.babelrc</h3>
+    <pre><code data-trim data-noescape>
+{
+  "presets" : ["es2015", "react"]
+}
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>index.html</h2>
+    <pre><code data-trim data-noescape>
+&lt;body&gt;
+  &lt;div id=&quot;root&quot;&gt;&lt;/div&gt;
+  &lt;script src=&quot;dist/bundle.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>index.js</h2>
+    <pre><code data-trim data-noescape>
+import React from 'react'
+import { render } from 'react-dom'
+import App from './App'
+
+render(&lt;App/&gt;, document.getElementById('root'))
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>App.js</h2>
+    <pre><code data-trim data-noescape>
+import React from 'react'
+import Counter from './Counter'
+
+export default class App extends React.Component {
+  render () {
+    const $counters = []
+
+    for(let i = 0; i &lt; 10; i++){
+      $counters.push(&lt;Counter key={i} /&gt;)
+    }
+
+    return (
+      &lt;div&gt;
+        {$counters}
+      &lt;/div&gt;
+    )
+  }
+}
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>Counter.js</h2>
+    <pre><code data-trim data-noescape>
+import React, { Component } from 'react'
+
+export default class Counter extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      count: 0,
+    }
+
+    this.handleClick = () =&gt; this.setState(prevState =&gt; ({
+      count: prevState.count + 1
+    }))
+  }
+
+  render () {
+    return (
+      &lt;div&gt;
+        &lt;button onClick={this.handleClick}&gt;click me!&lt;/button&gt;
+        &lt;span&gt;{this.state.count}&lt;/span&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+    </code></pre>
+  </section>
+
+  <section data-background-color="#fff">
+    <iframe data-src="/versions/2-react/0-components/client"></iframe>
+  </section>
+</section>
+
+<!--########################## 2.1 ##########################-->
+<section>
+  <section>
+    <h2>Version 2.1</h2>
+    <p>sum of all counters</p>
+  </section>
+
+  <section>
+    <h2>Result.js</h2>
+    <pre><code data-trim data-noescape>
+import React, { Component } from 'react'
+
+export default ({ result }) =&gt; &lt;h1&gt;Result: {result}&lt;/h1&gt;
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>App.js</h2>
+    <pre><code data-trim data-noescape>
+import React from 'react'
+import Counter from './Counter'
+import Result from './Result'
+
+export default class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      counters: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    }
+
+    this.handleClick = i =&gt; {
+      this.setState(prevState =&gt; {
+        prevState.counters[i]++
+        return {
+          counters: prevState.counters
+        }
+      })
+    }
+  }
+
+  render () {
+    return (
+      &lt;div&gt;
+        {this.state.counters.map((counter, i) =&gt; (
+          &lt;Counter key={i} count={counter} onClick={this.handleClick.bind(this, i)} /&gt;
+        ))}
+        &lt;Result result={this.state.counters.reduce((a, b) =&gt; a + b, 0)} /&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+
+    </code></pre>
+  </section>
+
+  <section data-background-color="#fff">
+    <iframe data-src="/versions/2-react/1-sum/client"></iframe>
+  </section>
+
+</section>
+
+<!--########################## 2.2 ##########################-->
+<section>
+  <section>
+    <h2>Version 2.2</h2>
+    <p>variable number of counters</p>
+    <aside class="notes">
+      disarter - your clients have too many counters!
+    </aside>
+  </section>
+
+  <section>
+    <h2>App.js</h2>
+    <pre><code data-trim data-noescape>
+    this.state = {
+      counters: [],
+    }
+    ...
+    &lt;button onClick={() =&gt; this.setState({
+      counters: [...this.state.counters, 0]
+    })}&gt;add counter&lt;/button&gt;
+    </code></pre>
+  </section>
+
+  <section data-background-color="#fff">
+    <iframe data-src="/versions/2-react/2-variable/client"></iframe>
+  </section>
+
+</section>        
+
+<!--########################## 3.0 ##########################-->
+<section>
+  <section>
+    <h2>Version 3.0</h2>
+    <p>Move data out of view</p>
+  </section>
+
+  <section>
+    <h3>Flux</h3>
+    <img src="/img/flux.png" />
+  </section>
+
+  <section>
+    <h3>Why Immutability?</h3>
+    <ul>
+      <li>Simplicity</li>
+      <li>Predictability</li>
+      <li>Performance</li>
+      <li>Mutation Tracking</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>What's redux?</h3>
+    <h5>"Redux is a predictable state container for JavaScript apps."</h5>
+    <ul>
+      <li>getState</li>
+      <li>dispatch</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>What’s a reducer</h3>
+    <p>The reducer is a pure function that takes the previous state and an action, and returns the next state.</p>
+    <pre><code data-trim data-noescape>
+(previousState, action) => newState
+    </code></pre>
+  </section>
+
+  <section>
+    <p>npm install --save<br/>
+    redux<br/>
+    react-redux</p>
+  </section>
+
+  <section>
+    <h2>store.js</h2>
+    <pre><code data-trim data-noescape>
+import { createStore } from 'redux'
+
+const initialState = []
+
+function counter(state, action) {
+  switch (action.type) {
+    case 'INCREMENT':
+      const newState = [...state]
+      newState[action.index]++
+      return newState
+
+    case 'ADD':
+      return [...state, 0]
+
+    default:
+      return state
+  }
+}
+
+export default createStore(counter, initialState)
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>store.js</h2>
+    <pre><code data-trim data-noescape>
+export function add(){
+  return {
+    type: 'ADD'
+  }
+}
+
+export function increment(index){
+  return {
+    type: 'INCREMENT',
+    index,
+  }
+}
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>index.js</h2>
+    <pre><code data-trim data-noescape>
+import React from 'react'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import App from './App'
+import store from './store'
+
+render(
+  &lt;Provider store={store}&gt;
+    &lt;App /&gt;
+  &lt;/Provider&gt;, 
+  document.getElementById('root')
+)
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>App.js</h2>
+    <pre><code data-trim data-noescape>
+import React from 'react'
+import Counters from './Counters'
+import Result from './Result'
+
+export default class App extends React.Component {
+  render () {
+    return (
+      &lt;div&gt;
+        &lt;Counters /&gt;
+        &lt;Result /&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>Counters.js</h2>
+    <pre><code data-trim data-noescape>
+import React from 'react'
+import { connect } from 'react-redux'
+import Counter from './Counter'
+import { add, increment } from './actions'
+
+const Counters = ({ counters, increment, add }) =&gt; (
+  &lt;div&gt;
+    &lt;button onClick={add}&gt;add counter&lt;/button&gt;
+    {counters.map((counter, i) =&gt; (
+      &lt;Counter key={i} count={counter} onClick={increment.bind(this, i)} /&gt;
+    ))}
+  &lt;/div&gt;
+)
+
+const mapStateToProps = (state) =&gt; {
+  return { 
+    counters: state
+  }
+}
+
+const mapDispatchToProps = {
+  add, 
+  increment,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Counters)
+
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>Result.js</h2>
+    <pre><code data-trim data-noescape>
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
+const Result = ({ result }) =&gt; &lt;h1&gt;Result: {result}&lt;/h1&gt;
+
+export default connect((state) =&gt; {
+  return { 
+    result: state.reduce((a, b) =&gt; a + b, 0)
+  }
+})(Result)
+    </code></pre>
+  </section>
+
+  <section data-background-color="#fff">
+    <iframe data-src="/versions/3-redux/0-connect/client"></iframe>
+  </section>
+</section>
+
+<!--########################## 3.1 ##########################-->
+<section>
+  <section>
+    <h2>Version 3.1</h2>
+    <p>Separate state and UI - Containers</p>
+  </section>
+
+  <section>
+    <h3>Containers - Higher Order Components</h3>
+    <h5 class="fragment">React.Component => React.Component</h5>
+    <br />
+    <h4 class="fragment">In redux context:</h4>
+    <h6 class="fragment">State -> (Data) Container -> (UI) Component</h6>
+
+    <pre class="fragment"><code data-trim data-noescape>
+const Container = connect(mapStateToProps)(Component)
+    </code></pre>
+  </section>
+
+  <section>
+    <h3>Containers</h3>
+    <img src="/img/containers.png" />
+  </section>
+
+  <section>
+    <h3>components/Result.js</h3>
+    <pre><code data-trim data-noescape>
+import React, { Component } from 'react'
+
+export default ({ result }) =&gt; &lt;h1&gt;Result: {result}&lt;/h1&gt;
+    </code></pre>
+  </section>
+
+  <section>
+    <h3>components/Counters.js</h3>
+    <pre><code data-trim data-noescape>
+import React from 'react'
+import Counter from './Counter'
+
+export default ({ counters, increment, add }) =&gt; (
+  &lt;div&gt;
+    &lt;button onClick={add}&gt;add counter&lt;/button&gt;
+    {counters.map((counter, i) =&gt; (
+      &lt;Counter key={i} count={counter} onClick={increment.bind(this, i)} /&gt;
+    ))}
+  &lt;/div&gt;
+)
+    </code></pre>
+  </section>
+
+  <section>
+    <h3>containers/Result.js</h3>
+    <pre><code data-trim data-noescape>
+import { connect } from 'react-redux'
+import Result from '../components/Result'
+
+function mapStateToProps(state) {
+  return { 
+    result: state.reduce((a, b) => a + b, 0)
+  }
+}
+
+export default connect(mapStateToProps)(Result)
+    </code></pre>
+  </section>
+
+  <section>
+    <h3>containers/Counters.js</h3>
+    <pre><code data-trim data-noescape>
+import { connect } from 'react-redux'
+import Counters from '../components/Counters'
+import { add, increment } from '../actions'
+
+const mapStateToProps = (state) => {
+  return { 
+    counters: state
+  }
+}
+
+const mapDispatchToProps = {
+  add, 
+  increment,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Counters)
+    </code></pre>
+  </section>
+
+
+  <section data-background-color="#fff">
+    <iframe data-src="/versions/3-redux/1-containers/client"></iframe>
+  </section>
+</section>
+
+<!--########################## 3.2 ##########################-->
+<section>
+  <section>
+    <h2>Version 3.2</h2>
+    <p>Add counters with delay</p>
+  </section>
+
+  <section>
+    <h3>What’s a thunk?!</h3>
+    <p>A thunk is a function that wraps an expression to delay its evaluation.</p>
+    <pre><code data-trim data-noescape>
+// calculation of 1 + 2 is immediate
+// x === 3
+let x = 1 + 2;
+
+// calculation of 1 + 2 is delayed
+// foo can be called later to perform the calculation
+// foo is a thunk!
+let foo = () => 1 + 2;
+    </code></pre>
+  </section>
+
+  <section>
+    <p>npm install --save redux-thunk</p>
+  </section> 
+
+  <section>
+    <h3>redux-thunk source code</h3>
+    <pre><code data-trim data-noescape>
+export default ({ dispatch, getState }) => next => action => {
+  if (typeof action === 'function') {
+    return action(dispatch, getState)
+  }
+
+  return next(action)
+}
+    </code></pre>
+  </section>
+
+  <section>
+    <h3>store.js</h3>
+    <pre><code data-trim data-noescape>
+import { createStore, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
+
+...
+
+export default createStore(counter, initialState, applyMiddleware(thunk))
+    </code></pre>
+  </section>
+
+  <section>
+    <h3>actions.js</h3>
+    <pre><code data-trim data-noescape>
+export function add(){
+  return (dispatch, getState) => {
+    // dispatch "in progress" event - ignored for now
+    dispatch({
+      type: 'INIT_ADD'
+    })
+
+    setTimeout(() => {
+      dispatch({
+        type: 'ADD'
+      })
+    }, getState().length * 1000)
+  }
+}
+...
+    </code></pre>
+  </section>
+
+  <section data-background-color="#fff">
+    <iframe data-src="/versions/3-redux/2-thunk/client"></iframe>
+  </section>
+</section>
+        
+<!--########################## Sources ##########################-->
+
+<section>
+  <h2>Future versions</h2>
+  <p>redux-saga</p>
+</section>
+
+<section>
+	<h6>Sources:</h6>
+	<ul>
+		<li>https://en.wikipedia.org/wiki/History_of_the_World_Wide_Web</li>
+		<li>https://en.wikipedia.org/wiki/JavaScript</li>
+		<li>https://en.wikipedia.org/wiki/Brendan_Eich</li>
+		<li>http://kangax.github.io/compat-table/es6/</li>
+		<li>http://caniuse.com/#feat=addeventlistener</li>
+    <li>https://github.com/gaearon/redux-thunk</li>
+    <li>https://facebook.github.io/react/blog/2013/06/05/why-react.html</li>
+    <li>https://www.destroyallsoftware.com/talks/wat</li>
+    <li>http://www.modulecounts.com/</li>
+	</ul>
+</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
